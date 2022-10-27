@@ -13,9 +13,18 @@ Each exercise is in a different folder, so you can run them by going to the resp
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-└── exercise1
-    ├── ocurrence_counter.py
-    └── sample.txt
+├── exercise1
+│   ├── ocurrence_counter.py
+│   ├── sample.txt
+│   ├── test_ocurrence_counter.py
+│   └── utils.py
+└── exercise2
+    ├── criteria.txt
+    ├── custom_sort.py
+    ├── entries.txt
+    ├── result.txt
+    ├── test_custom_sort.py
+    └── utils.py
 ```
 
 ### Exercise 1
@@ -26,6 +35,22 @@ You can run the program with the following command:
 
 ```bash
 python occurence_counter.py <text_file> <word_to_count>
+```
+
+Testing:
+
+```bash
+python test_custom_sort.py
+```
+
+### Exercise 2
+
+This solution (custom_sort.py) is a program that sorts a list of entries in a text file.
+
+To run it, you can use the next command:
+
+```bash
+python custom_sort.py <entries_file> <criteria_file>
 ```
 
 Testing:
