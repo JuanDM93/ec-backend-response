@@ -3,7 +3,7 @@ Python script to count the number of occurrences of a word in a text file.
 """
 
 # Importing required modules
-import sys
+import utils
 
 
 def count_word(file_data: str, word: str) -> int:
@@ -35,11 +35,9 @@ def main():
     """
     Main function
     """
-    filename = sys.argv[1]
-    word = sys.argv[2]
-    with open(filename, 'r') as f:
-        file_data = f.read()
-        result = count_word(file_data, word)
+    filename, word = utils.get_args()
+    file_data = utils.get_data_from_file(filename)
+    result = count_word(file_data, word)
     print(f'{result} ocurrencias encontradas.')
 
 
