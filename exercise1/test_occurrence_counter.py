@@ -7,7 +7,7 @@ Usage:
 import unittest
 
 from utils import get_data_from_file
-from ocurrence_counter import count_word
+from occurrence_counter import count_word
 
 
 class TestOcurrenceCounter(unittest.TestCase):
