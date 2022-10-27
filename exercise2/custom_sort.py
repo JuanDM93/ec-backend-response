@@ -1,7 +1,7 @@
 """
-Python script to sort an entry list of a dictionary in descending order of priority
+Python script to sort an entry list from a criteria list
 """
-from utils import get_args, get_data_from_file
+from utils import get_args, get_data
 
 
 CRITERIA_MAP = {
@@ -46,7 +46,7 @@ def sort_entries(entries: list, criteria: list) -> list:
         entries.remove(entry)
 
     # using sort
-    result.sort(key=lambda x: x['priority'], reverse=True)
+    # result.sort(key=lambda x: x['priority'], reverse=True)
 
     # using sorted
     # result = sorted(result, key=lambda x: x['priority'], reverse=True)
@@ -57,10 +57,10 @@ def sort_entries(entries: list, criteria: list) -> list:
     #         if result[i]['priority'] < result[j]['priority']:
     #             result[i], result[j] = result[j], result[i]
 
-    # for i in range(len(result)):
-    #     for j in range(len(result)):
-    #         if result[i]['priority'] > result[j]['priority']:
-    #             result[i], result[j] = result[j], result[i]
+    for i in range(len(result)):
+        for j in range(len(result)):
+            if result[i]['priority'] > result[j]['priority']:
+                result[i], result[j] = result[j], result[i]
 
     # using for loop and enumerate
     # for i, entry in enumerate(result):
@@ -77,9 +77,9 @@ def main():
     Main function
     """
     entries_file, criteria_file = get_args()
-    entries = get_data_from_file(entries_file)
-    criteria = get_data_from_file(criteria_file)
-    result = sort_entries(eval(entries), eval(criteria))
+    entries = get_data(entries_file)
+    criteria = get_data(criteria_file)
+    result = sort_entries(entries, criteria)
     print(result)
 
 

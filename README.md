@@ -13,9 +13,18 @@ Each exercise is in a different folder, so you can run them by going to the resp
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-└── exercise1
-    ├── ocurrence_counter.py
-    └── sample.txt
+├── exercise1
+│   ├── ocurrence_counter.py
+│   ├── sample.txt
+│   ├── test_ocurrence_counter.py
+│   └── utils.py
+└── exercise2
+    ├── criteria.txt
+    ├── custom_sort.py
+    ├── entries.txt
+    ├── result.txt
+    ├── test_custom_sort.py
+    └── utils.py
 ```
 
 ### Exercise 1

@@ -1,6 +1,21 @@
 import sys
 
 
+def get_args() -> tuple:
+    """
+    Function to get the arguments from the command line
+
+    Returns
+    -------
+    tuple
+        Tuple with the entries and criteria filenames
+    """
+    if len(sys.argv) != 3:
+        print('Usage: python3 custom_sort.py <entries_file> <criteria_file>')
+        sys.exit(1)
+    return sys.argv[1], sys.argv[2]
+
+
 def get_data_from_file(filename: str) -> str:
     """
     Function to get data from a file
@@ -24,16 +39,24 @@ def get_data_from_file(filename: str) -> str:
     return data
 
 
-def get_args() -> tuple:
+def get_data(filename: str) -> list:
     """
-    Function to get the arguments from the command line
+    Function to get data from a file
+
+    Parameters
+    ----------
+    filename : str
+        Name of the file
 
     Returns
     -------
-    tuple
-        Tuple with the entries and criteria filenames
+    list
+        List of data
     """
-    if len(sys.argv) != 3:
-        print('Usage: python3 custom_sort.py <entries_file> <criteria_file>')
+    data = get_data_from_file(filename)
+    try:
+        data = eval(data)
+    except NameError:
+        print(f'File {filename} has no data')
         sys.exit(1)
-    return sys.argv[1], sys.argv[2]
+    return data
