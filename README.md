@@ -14,9 +14,9 @@ Each exercise is in a different folder, so you can run them by going to the resp
 ├── LICENSE
 ├── README.md
 ├── exercise1
-│   ├── ocurrence_counter.py
+│   ├── occurrence_counter.py
 │   ├── sample.txt
-│   ├── test_ocurrence_counter.py
+│   ├── test_occurrence_counter.py
 │   └── utils.py
 └── exercise2
     ├── criteria.txt
@@ -29,18 +29,18 @@ Each exercise is in a different folder, so you can run them by going to the resp
 
 ### Exercise 1
 
-This solution (occurence_counter.py) is a simple program that counts the ocurrences of a certain word in a text file.
+This solution (ocurrence_counter.py) is a simple program that counts the ocurrences of a certain word in a text file.
 
 You can run the program with the following command:
 
 ```bash
-python occurence_counter.py <text_file> <word_to_count>
+python ocurrence_counter.py <text_file> <word_to_count>
 ```
 
 Testing:
 
 ```bash
-python test_custom_sort.py
+python test_occurrence_counter.py
 ```
 
 ### Exercise 2
