@@ -15,7 +15,7 @@ class TestOcurrenceCounter(unittest.TestCase):
 
     def setUp(self):
         """Set up data for tests."""
-        self.file_data = get_data_from_file('text.txt')
+        self.file_data = get_data_from_file('sample.txt')
 
     def test_count_word_success(self):
         """Test count_word function."""

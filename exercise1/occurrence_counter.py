@@ -22,12 +22,11 @@ def count_word(file_data: str, word: str) -> int:
     int
         Number of occurrences of the word in the text data
     """
-    words = file_data.split()
     count = 0
-    for w in words:
-        w = w.strip(',.;:')
-        if w == word:
-            count += 1
+    for i in range(len(file_data)):
+        if file_data[i] == word[0]:
+            if file_data[i:i+len(word)] == word:
+                count += 1    
     return count
 
 
