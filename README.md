@@ -29,12 +29,12 @@ Each exercise is in a different folder, so you can run them by going to the resp
 
 ### Exercise 1
 
-This solution (ocurrence_counter.py) is a simple program that counts the ocurrences of a certain word in a text file.
+This solution (occurrence_counter.py) is a simple program that counts the ocurrences of a certain word in a text file.
 
 You can run the program with the following command:
 
 ```bash
-python ocurrence_counter.py <text_file> <word_to_count>
+python occurrence_counter.py <text_file> <word_to_count>
 ```
 
 Testing:
