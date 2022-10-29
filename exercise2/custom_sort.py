@@ -3,10 +3,6 @@ Python script to sort an entry list from a criteria list
 """
 from utils import get_args, get_data
 
-# TODO: Test script time
-import timeit
-
-
 CRITERIA_MAP = {
     '=': lambda x, y: x == y,
     '<': lambda x, y: x < y,
@@ -36,7 +32,6 @@ def sort_entries(entries: list, criteria: list) -> list:
         Sorted list of entries
     """
     result = []
-    start_time = timeit.default_timer()
 
     for entry in entries:
         for criterion in criteria:
@@ -54,9 +49,6 @@ def sort_entries(entries: list, criteria: list) -> list:
 
     entries = [entry for entry in entries if entry not in result]
     result += entries
-
-    elapsed = timeit.default_timer() - start_time
-    print(f"Time elapsed: {elapsed}")
 
     return result
 
