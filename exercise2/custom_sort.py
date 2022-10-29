@@ -3,7 +3,6 @@ Python script to sort an entry list from a criteria list
 """
 from utils import get_args, get_data
 
-
 CRITERIA_MAP = {
     '=': lambda x, y: x == y,
     '<': lambda x, y: x < y,
@@ -33,6 +32,7 @@ def sort_entries(entries: list, criteria: list) -> list:
         Sorted list of entries
     """
     result = []
+
     for entry in entries:
         for criterion in criteria:
             key, operator, value = criterion
@@ -40,35 +40,16 @@ def sort_entries(entries: list, criteria: list) -> list:
             if not criterion_result:
                 break
         else:
-            result.append(entry)
+            for index, item in enumerate(result):
+                if entry['priority'] > item['priority']:
+                    result.insert(index, entry)
+                    break
+            else:
+                result.append(entry)
 
-    for entry in result:
-        entries.remove(entry)
+    entries = [entry for entry in entries if entry not in result]
+    result += entries
 
-    # using sort
-    # result.sort(key=lambda x: x['priority'], reverse=True)
-
-    # using sorted
-    # result = sorted(result, key=lambda x: x['priority'], reverse=True)
-
-    # using for loop
-    # for i in range(len(result)):
-    #     for j in range(i + 1, len(result)):
-    #         if result[i]['priority'] < result[j]['priority']:
-    #             result[i], result[j] = result[j], result[i]
-
-    for i in range(len(result)):
-        for j in range(len(result)):
-            if result[i]['priority'] > result[j]['priority']:
-                result[i], result[j] = result[j], result[i]
-
-    # using for loop and enumerate
-    # for i, entry in enumerate(result):
-    #     for j, entry2 in enumerate(result[i + 1:]):
-    #         if entry['priority'] < entry2['priority']:
-    #             result[i], result[j + i + 1] = result[j + i + 1], result[i]
-
-    result.extend(entries)
     return result
 
 
